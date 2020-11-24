@@ -102,16 +102,6 @@ const styles = StyleSheet.create({
     marginTop: 50,
     marginBottom: 100,
   },
-
-  buttonText: {
-    textAlign: "center",
-    color: "#fff",
-    fontSize: 30,
-    backgroundColor: "blue",
-    width: 40,
-    height: 40,
-    lineHeight: 40,
-  },
 });
 
 // React は「コンポーネント指向の UI ライブラリ」
