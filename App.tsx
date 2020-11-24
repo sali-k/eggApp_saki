@@ -12,14 +12,14 @@ export default function App() {
   const [count, setCount] = useState(100);
 
   const countDown = () => {
-    //eggを押すと、100→0までの間で1つずつカウントダウンする。
+    //egg画像を押すと、100→0までの間で1つずつカウントダウンする。
     if (count <= 100 && count > 0) {
       setCount(count - 1);
     }
   };
 
-  //変数numの定義 (今回、使用する型は文字列と数値)
-  let num: string | number = count;
+  //変数num(数値)の定義
+  let num: number = count;
   //変数egg(画像データ)の定義
   let egg;
   //変数text(文字列)の定義
@@ -34,7 +34,7 @@ export default function App() {
     egg = egg3;
   }
 
-  //textの切り替えの条件分岐(switch文)
+  //text文字の切り替えの条件分岐(switch文でトライ！)
   switch (num) {
     case 100:
       text = "何が生まれるのかはお楽しみ！";
@@ -52,7 +52,7 @@ export default function App() {
       text = "う…嘘だろ…";
       break;
     case 0:
-      text = "ニート確定🤗";
+      text = "🎉🤗ニート確定🤗🎉";
       break;
   }
 
@@ -60,7 +60,7 @@ export default function App() {
     <View style={styles.container}>
       <Text style={styles.comment}>{count}</Text>
       <Pressable onPress={countDown}>
-        <Image source={egg} style={styles.logo}></Image>
+        <Image source={egg} style={styles.eggs}></Image>
       </Pressable>
       <Text style={styles.text}>{text}</Text>
       <StatusBar style="auto" />
@@ -76,7 +76,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
 
-  logo: {
+  eggs: {
     width: 300,
     height: 300,
     marginTop: 50,
@@ -115,7 +115,6 @@ const styles = StyleSheet.create({
 });
 
 // React は「コンポーネント指向の UI ライブラリ」
-// Component 内部の状態を管理する際に使う仕組み
 // Component とは、React により最終的に出力する JSX を構成する再利用可能な部品のこと
-// Touchable Opacity (昔コンポーネント)↓
-// Pressable (新コンポーネント)
+// Component 内部の状態を管理する際に使う仕組み
+// Touchable Opacity (昔コンポーネント) → Pressable (新コンポーネント)
