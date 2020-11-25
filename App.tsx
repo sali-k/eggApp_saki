@@ -1,18 +1,24 @@
 import { StatusBar } from "expo-status-bar";
+// "react"モジュールからimportすることでReactの記述を使用できる
 import React from "react";
 // useState = 基本のフック(stateなどのReactの機能をクラスを書かずに使える新機能！)
 import { useState } from "react";
+// "react-native"モジュールからimportすることで、StyleSheetやTextコンポーネントを使える
 import { Image, StyleSheet, Text, View, Pressable } from "react-native";
+// 使用するegg画像をimport
 import egg1 from "./assets/egg01.png";
 import egg2 from "./assets/egg02.png";
 import egg3 from "./assets/egg03.png";
 
+// exportとは先ほど出てきたimportの反対の意味
+// export内で定義した記述を他の場所で使えるようにするもの
+// defaultオプション付きのexportは、そのファイルの中においてデフォルトでexportされるコンポーネントを決めることができ
 export default function App() {
   // 定数or変数 [変数a,変数aに値を入れるための関数] = useState(変数aの初期値);
   const [count, setCount] = useState(100);
 
+  //100→0までの間で1ずつカウントダウンするように設定。
   const countDown = () => {
-    //egg画像を押すと、100→0までの間で1つずつカウントダウンする。
     if (count <= 100 && count > 0) {
       setCount(count - 1);
     }
@@ -56,13 +62,25 @@ export default function App() {
       break;
   }
 
+  //リスタートボタンの設定
+  const restart = () => {
+    setCount(count * 0 + 100);
+  };
+
   return (
     <View style={styles.container}>
       <Text style={styles.comment}>{count}</Text>
+
       <Pressable onPress={countDown}>
         <Image source={egg} style={styles.eggs}></Image>
       </Pressable>
+
       <Text style={styles.text}>{text}</Text>
+
+      <Pressable onPress={restart}>
+        <Text style={styles.buttonText}>再チャレンジ</Text>
+      </Pressable>
+
       <StatusBar style="auto" />
     </View>
   );
@@ -101,6 +119,19 @@ const styles = StyleSheet.create({
     textAlign: "center",
     marginTop: 50,
     marginBottom: 100,
+  },
+
+  buttonText: {
+    textAlign: "center",
+    color: "#fff",
+    fontSize: 20,
+    fontWeight: "bold",
+    backgroundColor: "#d3d3d3",
+    width: 200,
+    height: 40,
+    lineHeight: 40,
+    marginBottom: 50,
+    // borderRadius: 70,
   },
 });
 
