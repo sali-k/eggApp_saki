@@ -103,18 +103,17 @@ const styles = StyleSheet.create({
   },
 
   comment: {
-    width: 400,
-    height: 100,
+    width: "100%",
+    height: "10%",
     backgroundColor: "#000",
-    marginBottom: 50,
     fontSize: 50,
     textAlign: "center",
     color: "#0f0",
-    paddingTop: 25,
+    paddingTop: 10,
   },
 
   text: {
-    fontSize: 30,
+    fontSize: 20,
     fontWeight: "bold",
     textAlign: "center",
     marginTop: 50,
