@@ -1,20 +1,12 @@
 import { StatusBar } from "expo-status-bar";
-// "react"モジュールからimportすることでReactの記述を使用できる
 import React from "react";
-// useState = 基本のフック(stateなどのReactの機能をクラスを書かずに使える新機能！)
 import { useState } from "react";
-// "react-native"モジュールからimportすることで、StyleSheetやTextコンポーネントを使える
 import { Image, StyleSheet, Text, View, Pressable, Button } from "react-native";
-// 使用するegg画像をimport
 import egg1 from "./assets/egg01.png";
 import egg2 from "./assets/egg02.png";
 import egg3 from "./assets/egg03.png";
 
-// exportとは先ほど出てきたimportの反対の意味
-// export内で定義した記述を他の場所で使えるようにするもの
-// defaultオプション付きのexportは、そのファイルの中においてデフォルトでexportされるコンポーネントを決めることができ
 export default function App() {
-  // const [変数a,変数aに値を入れるための関数] = useState(変数aの初期値);
   const [count, setCount] = useState(100);
 
   //100→0までの間で1ずつカウントダウンするように設定。
@@ -40,7 +32,7 @@ export default function App() {
     egg = egg3;
   }
 
-  //text文字の切り替えの条件分岐(switch文でトライ！)
+  //text文字の切り替えの条件分岐
   switch (num) {
     case 100:
       text = "何が生まれるのかはお楽しみ！";
@@ -127,8 +119,3 @@ const styles = StyleSheet.create({
     padding: "5%",
   },
 });
-
-// React は「コンポーネント指向の UI ライブラリ」
-// Component とは、React により最終的に出力する JSX を構成する再利用可能な部品のこと
-// Component 内部の状態を管理する際に使う仕組み
-// Touchable Opacity (昔コンポーネント) → Pressable (新コンポーネント)
