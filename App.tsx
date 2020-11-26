@@ -28,21 +28,17 @@ export default function App() {
     }
   };
 
-  const num = count;
-  let egg;
-  let text;
-
   //egg画像の切り替えの条件分岐
-  if (num <= 100 && num > 50) {
+  if (result.num <= 100 && result.num > 50) {
     result.egg = egg1;
-  } else if (num <= 50 && num >= 1) {
+  } else if (result.num <= 50 && result.num >= 1) {
     result.egg = egg2;
-  } else if (num <= 0) {
+  } else if (result.num <= 0) {
     result.egg = egg3;
   }
 
   //text文字の切り替えの条件分岐
-  switch (num) {
+  switch (result.num) {
     case 100:
       result.text = "何が生まれるのかはお楽しみ！";
       break;
