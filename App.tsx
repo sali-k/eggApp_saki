@@ -4,7 +4,7 @@ import React from "react";
 // useState = 基本のフック(stateなどのReactの機能をクラスを書かずに使える新機能！)
 import { useState } from "react";
 // "react-native"モジュールからimportすることで、StyleSheetやTextコンポーネントを使える
-import { Image, StyleSheet, Text, View, Pressable } from "react-native";
+import { Image, StyleSheet, Text, View, Pressable, Button } from "react-native";
 // 使用するegg画像をimport
 import egg1 from "./assets/egg01.png";
 import egg2 from "./assets/egg02.png";
@@ -91,14 +91,12 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#fff",
     alignItems: "center",
-    justifyContent: "center",
+    justifyContent: "space-around",
   },
 
   eggs: {
     width: 300,
     height: 300,
-    marginTop: 50,
-    marginBottom: 50,
     resizeMode: "contain",
   },
 
@@ -109,15 +107,13 @@ const styles = StyleSheet.create({
     fontSize: 50,
     textAlign: "center",
     color: "#0f0",
-    paddingTop: 10,
+    padding: "5%",
   },
 
   text: {
     fontSize: 20,
     fontWeight: "bold",
     textAlign: "center",
-    marginTop: 50,
-    marginBottom: 100,
   },
 
   buttonText: {
@@ -126,11 +122,9 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: "bold",
     backgroundColor: "#d3d3d3",
-    width: 200,
-    height: 40,
-    lineHeight: 40,
-    marginBottom: 50,
-    // borderRadius: 70,
+    lineHeight: 20,
+    borderRadius: 100,
+    padding: "5%",
   },
 });
 
