@@ -21,19 +21,18 @@ export default function App() {
     text: "",
   };
 
-  //100→0までの間で1ずつカウントダウンするように設定。
+  // 100→0までの間で1ずつカウントダウンする
   const countDown = () => {
     if (count <= 100 && count > 0) {
       setCount(count - 1);
     }
   };
 
-  // const num: number = count;
   const num = count;
   let egg;
   let text;
 
-  //egg画像の切り替えの条件分岐(if文)
+  //egg画像の切り替えの条件分岐
   if (num <= 100 && num > 50) {
     result.egg = egg1;
   } else if (num <= 50 && num >= 1) {
@@ -64,7 +63,7 @@ export default function App() {
       break;
   }
 
-  //リスタートボタンの設定
+  // リスタートボタンの設定
   const restart = () => {
     setCount(count * 0 + 100);
   };
