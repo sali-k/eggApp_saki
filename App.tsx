@@ -9,6 +9,18 @@ import egg3 from "./assets/egg03.png";
 export default function App() {
   const [count, setCount] = useState(100);
 
+  interface Result {
+    num: number;
+    egg: Object;
+    text: String;
+  }
+
+  const result: Result = {
+    num: count,
+    egg: egg1,
+    text: "",
+  };
+
   //100→0までの間で1ずつカウントダウンするように設定。
   const countDown = () => {
     if (count <= 100 && count > 0) {
@@ -16,41 +28,39 @@ export default function App() {
     }
   };
 
-  //変数num(数値)の定義
-  let num: number = count;
-  //変数egg(画像データ)の定義
+  // const num: number = count;
+  const num = count;
   let egg;
-  //変数text(文字列)の定義
   let text;
 
   //egg画像の切り替えの条件分岐(if文)
   if (num <= 100 && num > 50) {
-    egg = egg1;
+    result.egg = egg1;
   } else if (num <= 50 && num >= 1) {
-    egg = egg2;
+    result.egg = egg2;
   } else if (num <= 0) {
-    egg = egg3;
+    result.egg = egg3;
   }
 
   //text文字の切り替えの条件分岐
   switch (num) {
     case 100:
-      text = "何が生まれるのかはお楽しみ！";
+      result.text = "何が生まれるのかはお楽しみ！";
       break;
     case 80:
-      text = "まだまだかかりそう…";
+      result.text = "まだまだかかりそう…";
       break;
     case 50:
-      text = "え？暇人なの？？";
+      result.text = "え？暇人なの？？";
       break;
     case 20:
-      text = "え？友達いないの？？";
+      result.text = "え？友達いないの？？";
       break;
     case 10:
-      text = "う…嘘だろ…";
+      result.text = "う…嘘だろ…";
       break;
     case 0:
-      text = "🎉🤗ニート確定🤗🎉";
+      result.text = "🎉🤗ニート確定🤗🎉";
       break;
   }
 
@@ -64,10 +74,10 @@ export default function App() {
       <Text style={styles.comment}>{count}</Text>
 
       <Pressable onPress={countDown}>
-        <Image source={egg} style={styles.eggs}></Image>
+        <Image source={result.egg} style={styles.eggs}></Image>
       </Pressable>
 
-      <Text style={styles.text}>{text}</Text>
+      <Text style={styles.text}>{result.text}</Text>
 
       <Pressable onPress={restart}>
         <Text style={styles.buttonText}>再チャレンジ</Text>
