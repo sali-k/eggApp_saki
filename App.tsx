@@ -1,7 +1,7 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react";
 import { useState } from "react";
-import { Image, StyleSheet, Text, View, Pressable, Button } from "react-native";
+import { Image, StyleSheet, Text, View, Pressable } from "react-native";
 import egg1 from "./assets/egg01.png";
 import egg2 from "./assets/egg02.png";
 import egg3 from "./assets/egg03.png";
