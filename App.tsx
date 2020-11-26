@@ -99,7 +99,6 @@ const styles = StyleSheet.create({
 
   comment: {
     width: "100%",
-    height: "10%",
     backgroundColor: "#000",
     fontSize: 50,
     textAlign: "center",
