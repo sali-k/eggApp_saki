@@ -14,7 +14,7 @@ import egg3 from "./assets/egg03.png";
 // export内で定義した記述を他の場所で使えるようにするもの
 // defaultオプション付きのexportは、そのファイルの中においてデフォルトでexportされるコンポーネントを決めることができ
 export default function App() {
-  // 定数or変数 [変数a,変数aに値を入れるための関数] = useState(変数aの初期値);
+  // const [変数a,変数aに値を入れるための関数] = useState(変数aの初期値);
   const [count, setCount] = useState(100);
 
   //100→0までの間で1ずつカウントダウンするように設定。
