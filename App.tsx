@@ -61,10 +61,10 @@ export default function App() {
       break;
   }
 
-  // リスタートボタンの設定
-  // const restart = () => {
-  //   setCount(count * 0 + 100);
-  // };
+  リスタートボタンの設定;
+  const restart = () => {
+    setCount(count * 0 + 100);
+  };
 
   return (
     <View style={styles.container}>
@@ -76,9 +76,9 @@ export default function App() {
 
       <Text style={styles.text}>{result.text}</Text>
 
-      {/* <Pressable onPress={restart}>
+      <Pressable onPress={restart}>
         <Text style={styles.buttonText}>再チャレンジ</Text>
-      </Pressable> */}
+      </Pressable>
 
       <StatusBar style="auto" />
     </View>
@@ -114,14 +114,14 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
 
-  // buttonText: {
-  //   textAlign: "center",
-  //   color: "#fff",
-  //   fontSize: 20,
-  //   fontWeight: "bold",
-  //   backgroundColor: "#d3d3d3",
-  //   lineHeight: 20,
-  //   borderRadius: 100,
-  //   padding: "5%",
-  // },
+  buttonText: {
+    textAlign: "center",
+    color: "#fff",
+    fontSize: 20,
+    fontWeight: "bold",
+    backgroundColor: "#d3d3d3",
+    lineHeight: 20,
+    borderRadius: 100,
+    padding: "5%",
+  },
 });
