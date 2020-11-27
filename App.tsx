@@ -66,23 +66,39 @@ export default function App() {
     setCount(count * 0 + 100);
   };
 
-  return (
-    <View style={styles.container}>
-      <Text style={styles.comment}>{count}</Text>
+  if (count > 0) {
+    return (
+      <View style={styles.container}>
+        <Text style={styles.comment}>{count}</Text>
 
-      <Pressable onPress={countDown}>
-        <Image source={result.egg} style={styles.eggs}></Image>
-      </Pressable>
+        <Pressable onPress={countDown}>
+          <Image source={result.egg} style={styles.eggs}></Image>
+        </Pressable>
 
-      <Text style={styles.text}>{result.text}</Text>
+        <Text style={styles.text}>{result.text}</Text>
 
-      <Pressable onPress={restart}>
-        <Text style={styles.buttonText}>再チャレンジ</Text>
-      </Pressable>
+        <StatusBar style="auto" />
+      </View>
+    );
+  } else {
+    return (
+      <View style={styles.container}>
+        <Text style={styles.comment}>{count}</Text>
 
-      <StatusBar style="auto" />
-    </View>
-  );
+        <Pressable onPress={countDown}>
+          <Image source={result.egg} style={styles.eggs}></Image>
+        </Pressable>
+
+        <Text style={styles.text}>{result.text}</Text>
+
+        <Pressable onPress={restart}>
+          <Text style={styles.buttonText}>再チャレンジ</Text>
+        </Pressable>
+
+        <StatusBar style="auto" />
+      </View>
+    );
+  }
 }
 
 const styles = StyleSheet.create({
