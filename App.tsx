@@ -61,7 +61,7 @@ export default function App() {
       break;
   }
 
-  リスタートボタンの設定;
+  //リスタートボタンの設定;
   const restart = () => {
     setCount(count * 0 + 100);
   };
