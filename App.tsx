@@ -8,6 +8,8 @@ import egg3 from "./assets/egg03.png";
 
 export default function App() {
   const [count, setCount] = useState(100);
+  const eggImages = [egg1, egg2, egg3];
+  const eggImage = eggImages[1];
 
   interface Result {
     num: number;
@@ -17,7 +19,7 @@ export default function App() {
 
   const result: Result = {
     num: count,
-    egg: egg1,
+    egg: eggImage,
     text: "",
   };
 
@@ -30,11 +32,11 @@ export default function App() {
 
   //egg画像の切り替えの条件分岐
   if (result.num <= 100 && result.num > 50) {
-    result.egg = egg1;
+    result.egg = eggImages[0];
   } else if (result.num <= 50 && result.num >= 1) {
-    result.egg = egg2;
+    result.egg = eggImages[1];
   } else if (result.num <= 0) {
-    result.egg = egg3;
+    result.egg = eggImages[2];
   }
 
   //text文字の切り替えの条件分岐
@@ -60,9 +62,9 @@ export default function App() {
   }
 
   // リスタートボタンの設定
-  const restart = () => {
-    setCount(count * 0 + 100);
-  };
+  // const restart = () => {
+  //   setCount(count * 0 + 100);
+  // };
 
   return (
     <View style={styles.container}>
@@ -74,9 +76,9 @@ export default function App() {
 
       <Text style={styles.text}>{result.text}</Text>
 
-      <Pressable onPress={restart}>
+      {/* <Pressable onPress={restart}>
         <Text style={styles.buttonText}>再チャレンジ</Text>
-      </Pressable>
+      </Pressable> */}
 
       <StatusBar style="auto" />
     </View>
@@ -112,14 +114,14 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
 
-  buttonText: {
-    textAlign: "center",
-    color: "#fff",
-    fontSize: 20,
-    fontWeight: "bold",
-    backgroundColor: "#d3d3d3",
-    lineHeight: 20,
-    borderRadius: 100,
-    padding: "5%",
-  },
+  // buttonText: {
+  //   textAlign: "center",
+  //   color: "#fff",
+  //   fontSize: 20,
+  //   fontWeight: "bold",
+  //   backgroundColor: "#d3d3d3",
+  //   lineHeight: 20,
+  //   borderRadius: 100,
+  //   padding: "5%",
+  // },
 });
