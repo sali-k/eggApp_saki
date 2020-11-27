@@ -44,20 +44,17 @@ export default function App() {
     case 100:
       result.text = "何が生まれるのかはお楽しみ！";
       break;
-    case 80:
+    case 75:
       result.text = "まだまだかかりそう…";
       break;
     case 50:
       result.text = "え？暇人なの？？";
       break;
-    case 20:
-      result.text = "え？友達いないの？？";
-      break;
-    case 10:
-      result.text = "う…嘘だろ…";
+    case 25:
+      result.text = "え？？";
       break;
     case 0:
-      result.text = "🎉🤗ニート確定🤗🎉";
+      result.text = "🎉🤗おめでとう🤗🎉";
       break;
   }
 
